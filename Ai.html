@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="assets/img/WWWW.png" rel="icon">
+    <title>AI 영화 캐릭터와 대화하기</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url(assets/img/BGIO.jpg);
+            background-size: cover;
+        }
+        .character-selection, .chat-container {
+            display: none;
+            background-color: #d5ffa4;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .character-selection.active, .chat-container.active {
+            display: block;
+            text-align: center;
+        }
+        .character-list {
+            display: flex;
+            justify-content: space-around;
+        }
+        .character {
+            text-align: center;
+            cursor: pointer;
+        }
+        .character img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            transition: transform 0.3s;
+        }
+        .character img:hover {
+            transform: scale(1.1);
+        }
+        .character h3 {
+            margin-top: 10px;
+        }
+        .chat-box {
+            flex: 1;
+            overflow-y: auto;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            background-color: #fafafa;
+        }
+        .message {
+            margin: 10px 0;
+        }
+        .message.user {
+            text-align: right;
+        }
+        .message.user p {
+            background-color: #d1e7dd;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+        .message.character p {
+            background-color: #e2e3e5;
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 70%;
+        }
+        .input-box {
+            display: flex;
+        }
+        .input-box input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 10px 0 0 10px;
+            outline: none;
+        }
+        .input-box button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 0 10px 10px 0;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="character-selection active">
+        <h2>캐릭터를 선택하세요</h2>
+        <div class="character-list">
+            <div class="character" data-name="슬픔이" data-movie="인사이드 아웃">
+                <img src="assets/img/IOSad.jpg" alt="캐릭터 1">
+                <h3>슬픔이</h3>
+                <p>인사이드 아웃</p>
+            </div>
+            <div class="character" data-name="기쁨이" data-movie="인사이드 아웃">
+                <img src="assets/img/IOHap.jpg" alt="캐릭터 2">
+                <h3>기쁨이</h3>
+                <p>인사이드 아웃</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-container">
+        <div class="character-info">
+            <div class="character">
+                <img id="character-image" src="https://via.placeholder.com/80" alt="캐릭터 이미지">
+                <div class="info">
+                    <h2 id="character-name">AI 캐릭터</h2>
+                    <p id="movie-name">인사이드 아웃</p>
+                </div>
+            </div>
+        </div>
+        <div class="chat-box">
+            <div class="message character">
+                <p>안녕하세요! 무엇이 궁금한가요?</p>
+            </div>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="메시지를 입력하세요...">
+            <button>전송</button>
+        </div>
+    </div>
+    
+        <script>
+            document.querySelectorAll('.character').forEach(character => {
+                character.addEventListener('click', function() {
+                    const name = this.getAttribute('data-name');
+                    const movie = this.getAttribute('data-movie');
+                    const imageSrc = this.querySelector('img').src;
+    
+                    document.getElementById('character-name').textContent = name;
+                    document.getElementById('movie-name').textContent = movie;
+                    document.getElementById('character-image').src = imageSrc;
+    
+                    document.querySelector('.character-selection').classList.remove('active');
+                    document.querySelector('.chat-container').classList.add('active');
+                });
+            });
+        </script>
+    </body>
+    </html>
+    </body>
+    </html>

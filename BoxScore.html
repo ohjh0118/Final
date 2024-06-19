@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/img/WWWW.png" rel="icon">
+        <link href="assets/css/style_main.css" rel="stylesheet">
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+                background-image: url(assets/img/bgimg.jpg);
+            }
+            .main-title {
+                font-size: 48px;
+                font-weight: bold;
+                margin-bottom: 20px;
+                text-align: center;
+                color: #aa3939;
+            }
+            .container {
+                display: flex;
+                justify-content: space-between;
+                width: 150%;
+                max-width: 1400px;
+            }
+            .box {
+                background-color: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                flex: 1;
+                margin: 10px;
+            }
+            .box img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+            }
+            .title {
+                margin-top: 10px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="header" class="fixed-top">
+            <div class="container d-flex align-items-center justify-content-between">
+        
+              <h1 class="logo"><a href="index.html">WatchList</a></h1>
+             
+              <nav id="navbar" class="navbar">
+                <ul>
+                  <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+                  <li><a class="nav-link scrollto" href="#ott-categories">OTT-Categories</a></li>
+                  <li><a class="nav-link scrollto" href="#services">About Us</a></li>
+                  <li><a href="Articles.html">Articles</a></li>
+                  <li><a href="mypage.html">Mypage</a></li>
+                  <li class="dropdown"><a href="#"><span>Features</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                          <li><a href="NewTool.html">Subscribtion</a></li>
+                          <li><a href="community(debate).html">Cummunity(Debate)</a></li>
+                          <li><a href="community(secnario).html">Cummunity(Scenario)</a></li>
+                          <li><a href="Trailers.html">Trailers</a></li>
+                          <li><a href="BoxScore.html">BoxScore</a></li>
+                          <li><a href="AI.html">AI Character</a></li>
+                          <li><a class="nav-link scrollto " href="#shortcut">Shortcuts</a></li>
+                        </ul>
+                  </li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+              </nav><!-- .navbar -->
+        
+            </div>
+          </header><!-- End Header -->
+        <div class="main-title">실시간 시청 순위</div>
+        <div class="container">
+            <div class="box">
+                <img src="assets/img/Rank_Netflix.PNG" alt="이미지 1">
+                <div class="title">Netflix</div>
+            </div>
+            <div class="box">
+                <img src="assets/img/Rank_Disney.PNG" alt="이미지 2">
+                <div class="title">Disney+</div>
+            </div>
+            <div class="box">
+                <img src="assets/img/Rank_Movie.PNG" alt="이미지 3">
+                <div class="title">BoxOffice</div>
+            </div>
+        </div>
+    </body>
+    </html>
